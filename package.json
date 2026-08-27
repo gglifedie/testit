@@ -1,0 +1,1 @@
+{"name":"thenext-kordoc-build","private":true,"type":"module","scripts":{"build-doc":"tsx build.ts"},"dependencies":{"kordoc":"github:chrisryugj/kordoc#v4.9.2","tsx":"latest"}}
