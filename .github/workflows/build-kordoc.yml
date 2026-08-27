@@ -1,0 +1,23 @@
+name: Build Kordoc HWPX
+on:
+  workflow_dispatch:
+  push:
+    branches: [kordoc-pack-temp]
+    paths: ['build.ts','package.json','.github/workflows/build-kordoc.yml']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build-doc
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TheNeXt-Kordoc-HWPX
+          path: |
+            2026_TheNeXt_아이디어3안_Kordoc_공문서형.hwpx
+            2026_TheNeXt_아이디어3안_Kordoc_공문서형.md
+            2026_TheNeXt_Kordoc_QA.txt
